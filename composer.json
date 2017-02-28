@@ -1,0 +1,14 @@
+{
+    "name": "goosestudio/wpbounce",
+    "description": "Fork of the official Unbounce plugin and adds new options.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Andreas Nurbo",
+            "email": "andreas@goose.studio"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
