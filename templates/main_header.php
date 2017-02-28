@@ -1,4 +1,4 @@
-<img class="ub-logo src=<?php echo $img_url; ?>" />
+<img class="ub-logo" src="<?php echo esc_url($img_url); ?>" />
 <h1 class="ub-unbounce-pages-heading">Unbounce Pages</h1>
 
 <?php if ($authorization === 'success' && $is_authorized) : ?>

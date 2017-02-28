@@ -360,8 +360,8 @@ class UBWPListTable
         }
 ?>
 <p class="search-box">
-    <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
-    <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+    <label class="screen-reader-text" for="<?php echo esc_attr($input_id) ?>"><?php echo esc_html($text); ?>:</label>
+    <input type="search" id="<?php echo esc_attr($input_id) ?>" name="s" value="<?php _admin_search_query(); ?>" />
     <?php submit_button($text, 'button', '', false, array('id' => 'search-submit')); ?>
 </p>
 <?php

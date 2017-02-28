@@ -16,7 +16,7 @@
     <?php $table = new UBPageTable($proxyable_url_set); ?>
     <?php echo $table->display(); ?>
 
-  <p>Last refreshed  <?php echo $last_refreshed; ?>.</p>
+  <p>Last refreshed  <?php echo esc_html($last_refreshed); ?>.</p>
 
     <?php
 
