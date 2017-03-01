@@ -63,6 +63,12 @@ register_deactivation_hook(__FILE__, function () {
 });
 
 add_action('init', function () {
+    /**
+     * Don't load on frontend if user is logged.
+     */
+    if (is_user_logged_in() && !is_admin()) {
+        return;
+    }
     UBLogger::setup_logger();
 
     $domain = UBConfig::domain();
