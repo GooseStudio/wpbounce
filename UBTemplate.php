@@ -36,7 +36,7 @@ class UBTemplate
 
     public static function template_path($template)
     {
-        return UBTemplate::join_paths(dirname(__FILE__), 'templates', $template . '.php');
+        return UBTemplate::join_paths(__DIR__, 'templates', $template . '.php');
     }
 
     private static function join_paths()

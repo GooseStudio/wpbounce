@@ -9,17 +9,17 @@ Author URI: http://unbounce.com
 License: GPLv2
 */
 
-require_once dirname(__FILE__) . '/UBCompatibility.php';
-require_once dirname(__FILE__) . '/UBDiagnostics.php';
-require_once dirname(__FILE__) . '/UBUtil.php';
-require_once dirname(__FILE__) . '/UBConfig.php';
-require_once dirname(__FILE__) . '/UBLogger.php';
-require_once dirname(__FILE__) . '/UBHTTP.php';
-require_once dirname(__FILE__) . '/UBIcon.php';
-require_once dirname(__FILE__) . '/UBWPListTable.php';
-require_once dirname(__FILE__) . '/UBPageTable.php';
-require_once dirname(__FILE__) . '/UBEvents.php';
-require_once dirname(__FILE__) . '/UBTemplate.php';
+require_once __DIR__ . '/UBCompatibility.php';
+require_once __DIR__ . '/UBDiagnostics.php';
+require_once __DIR__ . '/UBUtil.php';
+require_once __DIR__ . '/UBConfig.php';
+require_once __DIR__ . '/UBLogger.php';
+require_once __DIR__ . '/UBHTTP.php';
+require_once __DIR__ . '/UBIcon.php';
+require_once __DIR__ . '/UBWPListTable.php';
+require_once __DIR__ . '/UBPageTable.php';
+require_once __DIR__ . '/UBEvents.php';
+require_once __DIR__ . '/UBTemplate.php';
 
 register_activation_hook(__FILE__, function () {
     add_option(UBConfig::UB_ROUTES_CACHE_KEY, array());
@@ -104,11 +104,11 @@ add_action('init', function () {
         $http_method,
         $current_url
     );
-    if ($url_purpose == null) {
-        UBLogger::debug("ignoring request to URL " . $current_url);
+    if ($url_purpose === null) {
+        UBLogger::debug('ignoring request to URL ' . $current_url);
     } elseif (is_user_logged_in() && UBUtil::is_wordpress_preview($_GET)) {
-        UBLogger::debug("Serving Wordpress Preview instead of landing page on root");
-    } elseif ($url_purpose == 'HealthCheck') {
+        UBLogger::debug('Serving Wordpress Preview instead of landing page on root');
+    } elseif ($url_purpose === 'HealthCheck') {
         if (UBConfig::domain_with_port() !== UBUtil::array_fetch($_SERVER, 'HTTP_HOST')) {
             http_response_code(412);
         }
